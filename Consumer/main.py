@@ -23,6 +23,7 @@ def enviar_email(message: str):
 
 
     Prontuario feito pelo HospitalCare
+    Obrigado pela Preferencia
     """
 
     try:
