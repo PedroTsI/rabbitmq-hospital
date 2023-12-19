@@ -16,17 +16,19 @@ def main():
 
 def enviar_email(message: str):
     sender = 'ppcantalice121@gmail.com'
+    password = 'luvsxfongxfzpwvz'
     receivers = ['pedrothegamer2@gmail.com']
-    message = """From: From Person <from@example.com>
-    To: To Person <to@example.com>
-    Subject: SMTP email example
+    message = """From: ppcantalice121@gmail.com
+    Subject: Prontuario do Paciente
 
 
-    This is a test message.
+    Prontuario feito pelo HospitalCare
     """
 
     try:
-        smtpObj = smtplib.SMTP('localhost')
+        smtpObj = smtplib.SMTP('smtp.gmail.com: 587')
+        smtpObj.starttls()
+        smtpObj.login(sender, password)
         smtpObj.sendmail(sender, receivers, message)         
         print("Successfully sent email")
     except Exception as e:
